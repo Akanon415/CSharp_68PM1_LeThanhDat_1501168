@@ -12,6 +12,7 @@ namespace Quản_Lý_Sinh_Viên
 {
     public partial class UserControl2 : UserControl
     {
+        DataClasses1DataContext db = new DataClasses1DataContext();
         public UserControl2()
         {
             InitializeComponent();
@@ -20,6 +21,12 @@ namespace Quản_Lý_Sinh_Viên
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void UserControl2_Load(object sender, EventArgs e)
+        {
+            List<LopHoc> dslh = db.LopHocs.ToList();
+            dataGridView1.DataSource = dslh;
         }
     }
 }

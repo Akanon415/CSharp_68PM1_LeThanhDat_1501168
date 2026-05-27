@@ -12,9 +12,50 @@ namespace Quản_Lý_Sinh_Viên
 {
     public partial class UserControl1 : UserControl
     {
+        DataClasses1DataContext db = new DataClasses1DataContext();
         public UserControl1()
         {
             InitializeComponent();
+        }
+
+        private void UserControl1_Load(object sender, EventArgs e)
+        {
+            List<SinhVien> dssv = db.SinhViens.ToList();
+            dataGridView1.DataSource = dssv ;
+            LoadDSLH();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SinhVien sinhvien = new SinhVien();
+            sinhvien.MaSoSinhVien = textBox1.Text;
+            sinhvien.HoTen = textBox2.Text;
+            sinhvien.GioiTinh = comboBox1.Text;
+            sinhvien.NgaySinh = DateTime.Parse(dateTimePicker1.Text);
+            sinhvien.MaLop = comboBox2.SelectedValue.ToString();
+            try
+            {
+                db.SinhViens.InsertOnSubmit(sinhvien);
+                db.SubmitChanges();
+                MessageBox.Show("Them moi sinh vien thanh cong.");
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void LoadData()
+        {
+            List<SinhVien> dssv = db.SinhViens.ToList();
+            dataGridView1.DataSource = dssv;
+        }
+        public void LoadDSLH() // load danh sach du lieu cho combo box o lop hoc
+        {
+            List<LopHoc> dslh = db.LopHocs.ToList();
+            comboBox2.DataSource = dslh;
+            comboBox2.DisplayMember = "TenLop";
+            comboBox2.ValueMember = "MaLop";
         }
     }
 }
