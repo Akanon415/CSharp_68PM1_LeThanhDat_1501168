@@ -57,5 +57,21 @@ namespace Quản_Lý_Sinh_Viên
             comboBox2.DisplayMember = "TenLop";
             comboBox2.ValueMember = "MaLop";
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                textBox1.Text = row.Cells["MaSoSinhVien"].Value.ToString();
+                textBox2.Text = row.Cells["HoTen"].Value.ToString();
+                comboBox1.Text = row.Cells["GioiTinh"].Value.ToString();
+
+                dateTimePicker1.Value = Convert.ToDateTime(row.Cells["NgaySinh"].Value);
+
+                comboBox2.SelectedValue = row.Cells["MaLop"].Value.ToString();
+            }
+        }
     }
 }
