@@ -102,5 +102,29 @@ namespace Quản_Lý_Sinh_Viên
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+    "Ban co chac chan muon xoa sinh vien nay?",
+    "Xac nhan",
+    MessageBoxButtons.YesNo,
+    MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                String MaSoSinhVien = textBox1.Text;
+                SinhVien sv = db.SinhViens
+                                    .FirstOrDefault(x => x.MaSoSinhVien == MaSoSinhVien);
+
+                if (sv != null)
+                {
+                    db.SinhViens.DeleteOnSubmit(sv);
+                    db.SubmitChanges();
+                    MessageBox.Show("Xoa thanh cong!");
+                    LoadData();
+                }
+            }
+        }
     }
 }
