@@ -179,5 +179,17 @@ namespace Quản_Lý_Sinh_Viên
             currentPage = 1;
             LoadData();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("Vui long chon lop hoc!");
+                return;
+            }
+            string MaLop = textBox2.Text;
+            var dssv = db.SinhViens.Where(x => x.MaLop == MaLop).ToList();
+            dataGridView1.DataSource = dssv;
+        }
     }
 }
