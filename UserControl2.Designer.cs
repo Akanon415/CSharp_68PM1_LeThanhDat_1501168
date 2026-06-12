@@ -74,6 +74,7 @@
             this.button9.TabIndex = 41;
             this.button9.Text = ">>";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -84,6 +85,7 @@
             this.button8.TabIndex = 40;
             this.button8.Text = ">";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -94,6 +96,7 @@
             this.button7.TabIndex = 39;
             this.button7.Text = "<";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -104,6 +107,7 @@
             this.button6.TabIndex = 38;
             this.button6.Text = "<<";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // dataGridView1
             // 
@@ -115,6 +119,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(678, 406);
             this.dataGridView1.TabIndex = 37;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button5
             // 
@@ -126,6 +131,7 @@
             this.button5.TabIndex = 36;
             this.button5.Text = "Tìm";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox3
             // 
@@ -139,9 +145,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(355, 63);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 16);
+            this.label6.Size = new System.Drawing.Size(215, 16);
             this.label6.TabIndex = 34;
-            this.label6.Text = "Tìm kiếm(Tên / Mã SV / Lớp):";
+            this.label6.Text = "Tìm kiếm(Mã ID / Mã lớp / Tên lớp):";
             // 
             // button4
             // 
@@ -164,6 +170,7 @@
             this.button3.TabIndex = 32;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -175,6 +182,7 @@
             this.button2.TabIndex = 31;
             this.button2.Text = "Sửa";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -186,6 +194,7 @@
             this.button1.TabIndex = 30;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -203,7 +212,6 @@
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Lớp học";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // textBox5
             // 
