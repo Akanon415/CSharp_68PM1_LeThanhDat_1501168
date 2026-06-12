@@ -74,6 +74,7 @@
             this.button9.TabIndex = 27;
             this.button9.Text = ">>";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -84,6 +85,7 @@
             this.button8.TabIndex = 26;
             this.button8.Text = ">";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -94,6 +96,7 @@
             this.button7.TabIndex = 25;
             this.button7.Text = "<";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -104,6 +107,7 @@
             this.button6.TabIndex = 24;
             this.button6.Text = "<<";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // dataGridView1
             // 
@@ -127,6 +131,7 @@
             this.button5.TabIndex = 22;
             this.button5.Text = "Tìm";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox3
             // 
